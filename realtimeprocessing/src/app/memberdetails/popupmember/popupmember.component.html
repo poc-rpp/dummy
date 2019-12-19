@@ -1,0 +1,136 @@
+
+<div mat-dialog-content id="popup_dialog">
+    <h5 class=" text-center"><u><i>Patient's Benefit information</i></u></h5>
+   <div class="card-body">
+      
+    
+          
+          <div class="row">
+              <div class="col-sm-6" >
+             <p> <b>Patient's Last Name:</b>{{resJSON.patient_last}}</p>
+             <p> <b>Patient's First Name:</b> {{resJSON.patient_first}}</p>
+             <p> <b>Member Product Code:</b> N6739906</p>
+      </div>
+      <div class="col-sm-6" >
+          <p> <b>Insured's I.D Number:</b> {{resJSON.member_product_code}}</p>
+          <p> <b>Group Number:</b> {{resJSON.group_number}}</p>
+          <p> <b>Insurer's Address:</b> {{resJSON.subscriber_address}}</p>
+   </div>
+    
+    </div>
+       <hr>
+       <b>Benefits Summary</b>
+       <div class="card-body">
+         
+          <table>
+              <tr>
+                  <td>Routine/Preventative Care</td>
+                  <td id="ip2">${{resJSON.routine_preventative_care}}(covered 100%)</td>
+                </tr>
+                <tr>
+                    <td >Office Visit Copay</td>
+                    <td id="ip2">${{resJSON.office_visit_copay.replace(".00", "")}}</td>
+                </tr>
+                <tr>
+                    <td>Specialist Copay</td>
+                    <td id="ip2">${{resJSON.specialist_copay.replace(".00", "")}}</td>
+                </tr>
+                <tr>
+                    <td>Urgent Care Pay</td>
+                    <td id="ip2">${{resJSON.urgent_care_copay.replace(".00", "")}}</td>
+                </tr>
+          </table>
+       </div>
+       <hr>
+      <b>In-Network Benefits</b>
+     <div class="card-body">
+        <div class="row">
+                <div class="col-md-6">
+                        <table>
+                            <h6>Individual</h6>
+                            <!-- <tr>
+                              <td>Max Copay</td>
+                              <td id="ip2">${{resJSON.max_copay_par_single.replace(".00", "")}}</td>
+                            </tr> -->
+                            <tr>
+                                <td>Max Deductible</td>
+                                <td id="ip2">${{resJSON.max_deductible_par_single.replace(".00", "")}}</td>
+                            </tr>
+                            <tr>
+                              <td> Max OOP</td>
+                              <td id="ip2">${{resJSON.max_oop_par_single.replace(".00", "")}}</td>
+                            </tr>
+                            <tr>
+                              </table>
+                        </div>
+            <div class="col-md-6">
+        <table>
+            <h6>Family</h6>
+            <!-- <tr>
+              <td>Max Copay</td>
+              <td id="ip2">${{resJSON.max_copay_par_family.replace(".00", "")}}</td>
+            </tr> -->
+            <tr>
+                <td>Max Deductible</td>
+                <td id="ip2">${{resJSON.max_deductible_par_family.replace(".00", "")}}</td>
+            </tr>
+            <tr>
+              <td> Max OOP</td>
+              <td id="ip2">${{resJSON.max_oop_par_family.replace(".00", "")}}</td>
+            </tr>
+            <tr>
+              </table>
+        </div>
+        
+          </div>
+          </div>
+      <hr>
+      <b>Out-of-Network Benefits</b>
+      <div class="card-body">
+      <div class="row">
+            <div class="col-md-6">
+                    <table>
+                        <h6>Individual</h6>
+                        <!-- <tr>
+                          <td>Max Copay</td>
+                          <td id="ip2">${{resJSON.max_copay_non_par_single}}</td>
+                        </tr> -->
+                        <tr>
+                            <td>Max Deductible</td>
+                            <td id="ip2">${{resJSON.max_deductible_non_par_single.replace(".00", "")}}</td>
+                        </tr>
+                        <tr>
+                          <td> Max OOP</td>
+                          <td id="ip2">${{resJSON.max_oop_non_par_single.replace(".00", "")}}</td>
+                        </tr>
+                        <tr>
+                          </table>
+                    </div>
+          <div class="col-md-6">
+      <table>
+          <h6>Family</h6>
+          <!-- <tr>
+            <td>Max Copay</td>
+            <td id="ip2">${{resJSON.max_copay_non_par_family}}</td>
+          </tr> -->
+          <tr>
+              <td>Max Deductible</td>
+              <td id="ip2">${{resJSON.max_deductible_non_par_family.replace(".00", "")}}</td>
+          </tr>
+          <tr>
+            <td> Max OOP</td>
+            <td id="ip2">${{resJSON.max_oop_non_par_family.replace(".00", "")}}</td>
+          </tr>
+          <tr>
+            </table>
+      </div>
+     
+        </div>
+    </div>
+     
+    </div>
+    <div mat-dialog-actions align="center">
+      <button mat-raised-button (click)="onNoClick()">Close</button>
+      <!-- <button mat-raised-button [mat-dialog-close]="data.animal"  [routerLink]="['/claimsubmission']"cdkFocusInitial>Proceed</button> -->
+    </div>
+    

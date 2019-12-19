@@ -1,0 +1,84 @@
+<br>
+<div   class="container-fluid">
+<div *ngIf="condition" class="main-content" >
+        <div class="row">
+            <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+        <div class="card" >
+          
+          <div class="card-header text-center">
+            <h5 class="title"><i>Service Payment Estimation</i></h5>
+          </div>
+          <div class="card-body">
+           
+                <div class="row">
+                        <div class="col" >
+                          <!-- <label>Payment Transaction ID:</label>
+                          <input type="text" id="ip2" readOnly class="form-control" placeholder="First name"> -->
+                          <label>Provider Payment reference #</label>
+                          <input type="text" [(ngModel)]="this.restsctn2.subscriber_id "  id="ip2" readOnly class="form-control" placeholder="Provider Payment reference">
+                           <label>Total Discount:</label>
+                          <input type="text" value="{{this.restsctn2.discount_percentage}}%" id="ip2" readOnly class="form-control" placeholder="$0">
+                          <label>Total Paid to Provider:</label>
+                          <input type="text" value="{{this.restsctn2.total_provider_pay_amt  | currency}}" id="ip2" readOnly class="form-control" placeholder="$0">
+                        </div>
+                        <div class="col" >
+                          <label>Total Charge:</label>
+                          <input type="text" value="{{this.restsctn2.total_billed_amt| currency}}" id="ip2" readOnly class="form-control" placeholder="$0">
+                          <label>Total Allowed:</label>
+                          <input type="text" value="{{this.restsctn2.total_allowed_amt| currency}}" id="ip2" readOnly class="form-control" placeholder="$0">
+                          <label>Member Responsiblity:</label>
+                          <input type="text" value="{{this.restsctn2.total_member_responsibility| currency}}" id="ip2" readOnly class="form-control" placeholder="$0">
+                        </div>
+                      </div>
+          </div>
+          <div class="card-body">
+                <div class="card-header text-center">
+                  <h5 class="title"><i>Itemized Service Payments</i></h5>
+                </div>
+                <table>
+                  
+                  <tr> 
+                    <th>CPT/HCPCS</th> 
+                    <th>Diagonsis Code </th>
+                     <th>Charge</th> 
+                     <th>Allowed</th> 
+                     <th>Discount</th> 
+                     <th>Pay to Provider</th> 
+                     <th>Member responsiblity</th> 
+                    </tr> 
+                     <tr *ngFor="let item of restsctn2.services" >
+                          <td>{{item.procedure_code}}</td> 
+                          <td>{{item.diagnosis_code_line}}</td> 
+                          <td>${{item.billed_amount}}</td> 
+                          <td>${{item.allowed_amt}}</td>
+                          <td>${{item.discount_amt}}</td> 
+                          <td>${{item.provider_pay_amt}}</td> 
+                          <td>${{item.member_responsibility}}</td> 
+                        </tr>
+                        <!-- <tr>
+                            <td>{{this.restsctn2.services[1].procedure_code}}</td> 
+                            <td>{{this.restsctn2.services[1].diagnosis_code_line}}</td> 
+                            <td>${{this.restsctn2.services[1].billed_amount}}</td> 
+                            <td>${{this.restsctn2.services[1].allowed_amt}}</td>
+                            <td>${{this.restsctn2.services[1].discount_amt}}</td> 
+                            <td>${{this.restsctn2.services[1].provider_pay_amt}}</td> 
+                            <td>${{this.restsctn2.services[1].member_responsibility}}</td> 
+                          </tr> -->
+                                </table>
+          </div>
+          
+          <div  class="row" >
+            <div class="col-sm-3"></div>
+           <div  class="col-sm-7" >
+            <button mat-raised-button [routerLink]="['/userprofile']"><i>Contact Customer Service</i></button>  &nbsp;
+            <button mat-raised-button (click)="submit()" ><i>Confirm to Receive Payment</i></button>
+           </div>
+          </div>
+      </div>
+    </div>
+</div>
+</div>
+<app-payment *ngIf="!condition"></app-payment>
+</div>
+

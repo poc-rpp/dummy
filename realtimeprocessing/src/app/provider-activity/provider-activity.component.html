@@ -1,0 +1,56 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" style=" font-size: 1.25rem;" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item active">
+                    <a class="nav-link" style=" font-size: 1.25rem;" href="#">Verify </a>
+                  </li>
+            <li class="nav-item active">
+                        <a class="nav-link" style=" font-size: 1.25rem;" href="#">Submit </a>
+                      </li>
+            <li class="nav-item active">
+                            <a class="nav-link" style=" font-size: 1.25rem;" href="#">Scan QR</a>
+                          </li>  
+                          <li class="nav-item active">
+                                <a class="nav-link" style=" font-size: 1.25rem;" href="#">Contact Customer Care</a>
+                              </li>    
+                          </ul>       
+        </div>
+      </nav> -->
+      <mat-tab-group  style="background-color:white;
+
+      /* Full height */
+      height: 100%; 
+      
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;" [selectedIndex]="selectedIndex" (selectedTabChange)="tabClick($event)">
+            <mat-tab label="Dashboard"> <app-dashboard (voted)="onVoted($event)"></app-dashboard></mat-tab>
+            <mat-tab label="Verify Member Eligibility"  >   <div  id="app">
+                <div><video #video id="video" width="640" height="480" autoplay></video></div>
+                
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button mat-raised-button (click)="capture('scan')">Scan</button>
+                <canvas #canvas id="canvas" width="640" height="480"></canvas>
+                <!-- <ng2-qrcode-reader   (result)="render($event)" [qrr-show]="showQRCode" [qrr-value]="value" [qrr-type]="elementType">  
+                  </ng2-qrcode-reader><br>  
+                  <div #result></div>  -->
+                
+                </div>
+            <app-memberdetails [isScanned]="isScanned"></app-memberdetails> 
+          </mat-tab>
+            <mat-tab label="Submit Services" > 
+               <app-claimsubmission> </app-claimsubmission></mat-tab>
+            <!-- <mat-tab label="{{data | date : 'yyyy-MM-dd'}}"> </mat-tab> -->
+            <mat-tab label="My Profile"> <app-dashboard></app-dashboard></mat-tab>
+            <mat-tab label="Payments"> <app-dashboard></app-dashboard></mat-tab>
+            <mat-tab disabled></mat-tab>
+            <mat-tab disabled></mat-tab>
+            &nbsp;<mat-tab  style="padding-left: 50px !important;
+            justify-content: left !important;"disabled label="{{data | date : 'yyyy-MM-dd'}}">
+            </mat-tab>
+          </mat-tab-group>
+        

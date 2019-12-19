@@ -1,0 +1,18 @@
+.input{
+  border-width: 0px;
+}
+.patient-list:hover {
+  border: 1px solid #007bff;
+  padding: 10px;
+}
+.patient-list {
+  transition: .3s;
+}
+.information {
+  color: rgba(0, 102, 178, 1);
+}
+.data {
+  text-align: left;
+  border: 1px solid rgba(122, 122, 122, .87);
+  margin-right: 20px;
+}

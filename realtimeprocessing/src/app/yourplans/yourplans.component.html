@@ -1,0 +1,1360 @@
+<div  class="container-fluid">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="card col-sm-10">
+                <h5 class="text-center">Your Employer Plans</h5>
+                <div class= "row" >
+                    
+                    <div  class="col-sm-6"  >
+                        
+                <div *ngFor="let item of listOfPlans" >
+                                <div class="card selector"  (click)="click(item)">
+                                  
+                                        <h5 class="card-title">&nbsp;&nbsp;{{item.plan}}</h5>
+                                      
+                                </div>
+                               
+                                </div>  
+                                <div>
+                                <button  mat-raised-button (click)="onNoClick()">Back</button>
+                                
+                                </div>
+                                
+                            </div>  
+                            <div  class="col-sm-6 scroll ">
+                                <!-- High Deductible Health Plan -->
+                                <div *ngIf="selectedPlan=='High Deductible Health Plan'">
+                                    <h6 class="text-center">High Deductible Health Plan</h6>
+                                    <table  border="1" cellpadding="5" cellspacing="5" width="100%" style="background-color:white;">
+                                        
+                                            <tr>
+                                               <th>General Plan Provisions</th>
+                                                <th scope="col" colspan="2" >2020 Benefit</th>
+                                            </tr>
+                                            <tr>
+                                               <td></td>       
+                                                        <td style= "width: 30%;" ><b>In-network</b></td>
+                                                        <td style= "width: 30%;"><b>Out-Of-Network</b></td> 
+                                            </tr>
+                                            <tr>
+                                            <td>
+                                                    Calendar Year Deductible
+                                            </td>  
+                                            <td style= "width: 30%;">$2,800 Individual/$5,600 Family; in-network and out-of-network combined</td>	
+                                            <td style= "width: 30%;">$2,800 Individual/$5,600 Family; in-network and out-of-network combined</td>       
+                                                 </tr>
+                                               <tr>
+                                            <td>
+                                                    Calendar Year Deductible Pharmacy
+                                            </td>  
+                                            <td style= "width: 30%;">Combined with Medical </td>	
+                                            <td style= "width: 30%;">Combined with Medical </td>       
+                                                 </tr>  
+                                             <tr>
+                                             <td>Coinsurance</td>  
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible for most services </td>	
+                                              <td style= "width: 30%;">The Plan pays 70% after deductible for most services </td>       
+                                            </tr> 
+                                            <tr>
+                                             <td><b>Out-of-Pocket maximum</b> </td>   
+                                             <td></td> 
+                                             <td></td>     
+                                            </tr> 
+                                            <tr>
+                                             <td>Individual </td>     
+                                             <td style= "width: 30%;">$3,800  </td>	
+                                            <td style= "width: 30%;">$5,800 </td>  
+                                            </tr> 
+                                             <tr>
+                                             <td>Family </td>     
+                                             <td style= "width: 30%;">$7,600   </td>	
+                                            <td style= "width: 30%;">$11,600 </td>  
+                                            </tr>  
+                                             <tr>
+                                             <td>Copayments apply to Out-of-Pocket Maximum?</td>     
+                                             <td style= "width: 30%;">N/A  </td>	
+                                            <td style= "width: 30%;">N/A  </td>  
+                                            </tr> 
+                                              <tr>
+                                             <td>Lifetime Maximum</td>     
+                                             <td style= "width: 30%;">Unlimited  </td>	
+                                            <td style= "width: 30%;">Unlimited  </td>  
+                                            </tr>
+                                             <tr>
+                                             <td>Adult Dependent (Child)</td>     
+                                             <td style= "width: 30%;">No, unless qualifies as disabled prior to age 26.</td>	
+                                            <td style= "width: 30%;">No, unless qualifies as disabled prior to age 26.</td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Domestic Partner</td>     
+                                             <td style= "width: 30%;">Yes.</td>	
+                                            <td style= "width: 30%;">Yes.</td>  
+                                            </tr> 
+                                             <tr>
+                                             <td>Dependent age limits</td>     
+                                             <td style= "width: 30%;">Age 26</td>	
+                                            <td style= "width: 30%;">Age 26 </td>  
+                                            </tr> 
+                                              <tr>
+                                             <td>Coverage ends</td>     
+                                             <td style= "width: 30%;">End of calendar year </td>	
+                                            <td style= "width: 30%;">End of calendar year  </td>  
+                                            </tr> 
+                                              <tr>
+                                             <td>PCP Selection Required</td>     
+                                             <td style= "width: 30%;">No</td>	
+                                            <td style= "width: 30%;">No</td>  
+                                            </tr> 
+                                             <tr>
+                                             <td>Coverage Outside of US</td>     
+                                             <td style= "width: 30%;">Yes. Request coverage verification for foreign travel. Foreign claims covered at out-of-network level. Emergency care covered at in-network level. </td>	
+                                            <td style= "width: 30%;">Yes. Request coverage verification for foreign travel. Foreign claims covered at out-of-network level. Emergency care covered at in-network level. </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td><b>Outpatient Benefits</b></td>     
+                                             <td></td>	
+                                            <td></td>  
+                                            </tr> 
+                                            <tr>
+                                             <td><b>Preventive Care Services</b></td>     
+                                             <td></td>	
+                                            <td></td>  
+                                            </tr>
+                                            <tr>
+                                             <td>Annual routine adult physical exams</td>     
+                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>   
+                                             <tr>
+                                             <td>Well Child/Baby care including immunizations</td>     
+                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>
+                                            <tr>
+                                             <td>Annual Well Woman exam</td>     
+                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>  
+                                             <tr>
+                                             <td>Cancer Screening</td>     
+                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>  
+                                            <tr>
+                                             <td>Mammogram</td>     
+                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>  
+                                            <tr>
+                                             <td>Prostate</td>     
+                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>  
+                                             <tr>
+                                             <td>Pap Smear (lab work)</td>     
+                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                              <tr>
+                                             <td>Colorectal Screening</td>     
+                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>
+                                             <tr>
+                                             <td>Physician Office Visits </td>     
+                                             <td style= "width: 30%;"></td>	
+                                            <td style= "width: 30%;"></td>  
+                                            </tr> 
+                                              <tr>
+                                             <td>Illness/Injury</td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                            </tr> 
+                                              <tr>
+                                             <td>Specialist Visits</td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                            </tr> 
+                                             <tr>
+                                             <td>Allergy testing & diagnosis</td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                            </tr>  
+                                            <tr>
+                                             <td>Allergy Injections</td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                            </tr>
+                                             <tr>
+                                             <td>Maternity Care </td>     
+                                             <td style= "width: 30%;"> </td>	
+                                            <td style= "width: 30%;"></td>  
+                                            </tr> 
+                                             <tr>
+                                             <td>Initial Visit</td>     
+                                             <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Subsequent Office Visits</td>     
+                                             <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>  
+                                            <tr>
+                                             <td>Outpatient Surgery</td>     
+                                             <td style= "width: 30%;"> </td>	
+                                            <td style= "width: 30%;"></td>  
+                                            </tr> 
+                                             <tr>
+                                             <td>Copay per service (physician office/facility)</td>     
+                                             <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td><b>Outpatient Rehabilitation</b>  </td>     
+                                             <td style= "width: 30%;"> </td>	
+                                            <td style= "width: 30%;"></td>  
+                                            </tr> 
+                                             <tr>
+                                             <td>Speech Therapy</td>     
+                                             <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>
+                                            <tr>
+                                             <td>Occupational Therapy</td>     
+                                             <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>
+                                            <tr>
+                                             <td>Physical Therapy</td>     
+                                             <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>  
+                                              <tr>
+                                             <td>Limits</td>     
+                                             <td style= "width: 30%;"> 30 visits per calendar year per therapy combined in- and out-of-network. Additional visits allowed if determined medically necessary after review  </td>	
+                                            <td style= "width: 30%;">30 visits per calendar year per therapy combined in- and out-of-network. Additional visits allowed if determined medically necessary after review  </td>  
+                                            </tr> 
+                                             <tr>
+                                             <td>Urgent Care Centers</td>     
+                                             <td style= "width: 30%;"> The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                            </tr>
+                                             <tr>
+                                             <td><b>Inpatient Benefits</b> </td>     
+                                             <td style= "width: 30%;"> </td>	
+                                            <td style= "width: 30%;"> </td>  
+                                            </tr> 
+                                             <tr>
+                                             <td>Inpatient Hospital Benefits </td>     
+                                             <td style= "width: 30%;"> </td>	
+                                            <td style= "width: 30%;"> </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Hospital room & board; services, supplies,&medication (includes maternity care) </td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Physician Services </td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Surgery Services</td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Anesthesiology </td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Emergency Care </td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Emergency Room Services</td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Ambulance Services</td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Mental Health/Substance Abuse Benefits </td>     
+                                             <td style= "width: 30%;"> </td>	
+                                            <td style= "width: 30%;"></td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Mental Health Inpatient</td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                             <tr>
+                                             <td>Mental Health Outpatient</td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr>
+                                             <tr>
+                                             <td>Substance Abuse Inpatient</td>     
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td>Substance Abuse Outpatient</td>       
+                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                            </tr> 
+                                            <tr>
+                                             <td><b>Prescription Drug Benefits</b></td>     
+                                             <td style= "width: 30%;"></td>	
+                                            <td style= "width: 30%;"> </td>  
+                                            </tr>
+                                             <tr>
+                                             <td>Prescription Drugs</td>     
+                                             <td style= "width: 30%;">Retail (Up to a 30-day supply) 
+                                                    Participating Pharmacies 
+                                                    The Plan pays 90% after deductible 
+                                                    
+                                                    
+                                                    Participant pays difference between brand and generic drugs. Difference will not accumulate to the OOP Maximum. 
+                                                    Mandatory Generics will be required unless a medical necessity waiver is provided by a physician 
+                                                    Mail Order (Up to a 90-day supply) 
+                                                    The Plan pays 90% after deductible 
+                                                    
+                                                    
+                                                    Specialty Pharmacy: The Plan pays 90% after deductible 
+                                                    Maintenance drugs must be filled through Plan's Rx mail service or through participating 90-day retail pharmacies 
+                                                    Mandatory Generics will be required unless a medical necessity waiver is provided by a physician  </td>	
+                                            <td style= "width: 30%;">Retail (Up to a 30-day supply) 
+                                                    Non-participating Pharmacies 
+                                                    The Plan pays 70% after deductible 
+                                                    
+                                                    
+                                                    
+                                                    Mandatory Generics will be required unless a medical necessity waiver is provided by a physician 
+                                                    Mail Order 
+Not Covered 
+
+                                                    </td>  
+                                            </tr>
+                                            <tr>
+                                              <td><b>Other Services, Supplies and Facilities</b></td>       
+                                                <td style= "width: 30%;"> </td>	
+                                               <td style= "width: 30%;"></td>  
+                                               </tr> 
+                                                 <tr>
+                                                <td>Acupuncture</td>       
+                                                <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                               <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                               </tr> 
+                                                <tr>
+                                                <td>Lab and X-ray</td>       
+                                                <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                               <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                               </tr>
+                                               <tr>
+                                                <td>Durable Medical Equipment (DME)</td>       
+                                                <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                               <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                               </tr> 
+                                               <tr>
+                                                <td>Spinal Manipulations/Chiropractic</td>       
+                                                <td style= "width: 30%;"> The Plan pays 90% after deductible, 30 visits per calendar year maximum (combined in-network and out-of-network)  </td>	
+                                               <td style= "width: 30%;">The Plan pays 90% after deductible, 30 visits per calendar year maximum (combined in-network and out-of-network)  </td>  
+                                               </tr>
+                                               <tr>
+                                                <td>Family Planning</td>       
+                                                <td style= "width: 30%;"> The Plan pays 90% after deductible; $25,000 lifetime maximum for all Family Planning services including Artificial Insemination, IVF, GIFT, and ZIFT (in-network and out-of-network combined)  </td>	
+                                               <td style= "width: 30%;">The Plan pays 70% after deductible; $25,000 lifetime maximum for all Family Planning services including Artificial Insemination, IVF, GIFT, and ZIFT (in-network and out-of-network combined)  </td>  
+                                               </tr> 
+                                               <tr>
+                                                <td>Artificial Insemination</td>       
+                                                <td style= "width: 30%;"> The Plan pays 90% after deductible, 30 visits per calendar year maximum (combined in-network and out-of-network)  </td>	
+                                               <td style= "width: 30%;">The Plan pays 90% after deductible, 30 visits per calendar year maximum (combined in-network and out-of-network)  </td>  
+                                               </tr> 
+                                               <tr>
+                                                <td>IVF/GIFT/ZIFT</td>       
+                                                <td style= "width: 30%;"> The Plan pays 90% after deductible, 30 visits per calendar year maximum (combined in-network and out-of-network)  </td>	
+                                               <td style= "width: 30%;">The Plan pays 90% after deductible, 30 visits per calendar year maximum (combined in-network and out-of-network)  </td>  
+                                               </tr> 
+                                               <tr>
+                                                <td>Infertility Drug Coverage</td>       
+                                                <td style= "width: 30%;">$15,000 lifetime maximum for Infertility Drug coverage (in-network and out-of-network combined</td>	
+                                               <td style= "width: 30%;">$15,000 lifetime maximum for Infertility Drug coverage (in-network and out-of-network combined)  </td>  
+                                               </tr> 
+                                               <tr>
+                                                <td>Hospice Care</td>       
+                                                <td style= "width: 30%;"> The Plan pays 90% after deductible, 360 days lifetime maximum (in-network and out-of-network combined) </td>	
+                                               <td style= "width: 30%;">The Plan pays 70% after deductible, 360 days lifetime maximum (in-network and out-of-network combined) </td>  
+                                               </tr> 
+                                               <tr>
+                                                <td>Skilled Nursing Facilities</td>       
+                                                <td style= "width: 30%;"> The Plan pays 90% after deductible.</td>	
+                                               <td style= "width: 30%;">The Plan pays 70% after deductible.</td>  
+                                               </tr> 
+                                                <tr>
+                                                <td>Limits</td>       
+                                                <td style= "width: 30%;"> 120 days per calendar year (in-network and out-of-network combined) </td>	
+                                               <td style= "width: 30%;">120 days per calendar year (in-network and out-of-network combined) </td>  
+                                               </tr>
+                                               <tr>
+                                                <td>Home Health Care</td>       
+                                                <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                               <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                               </tr>
+                                               <tr>
+                                                <td>Home Health Care Limit</td>       
+                                                <td style= "width: 30%;"> 100 visits per calendar year (in-network and out-of-network combined)  </td>	
+                                               <td style= "width: 30%;">100 visits per calendar year (in-network and out-of-network combined)  </td>  
+                                               </tr> 
+                                                <tr>
+                                                <td>Vision and Hearing</td>       
+                                                <td style= "width: 30%;"> Vision: The Plan pays 100% in conjunction with an annual physical exam. Hearing: The Plan pays 100% for routine hearing exams covered as part of annual physical exams.</td>	
+                                               <td style= "width: 30%;">The Plan pays 70% after deductible in conjunction with an annual physical exam </td>  
+                                               </tr>
+                                        </table>
+                                        <br>
+                                        <table border="1" cellpadding="5" cellspacing="5" width="100%" style="background-color:white;">
+                                                <tr>
+                                                  <th>Covered Members</th>
+                                                  <th>Bi Weekly Cost</th>
+                                                  <th>Annual Cost</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="radio" name="gender" value="male"> Individual Only</td>
+                                                  <!-- <td>Individual Only</td> -->
+                                                  <td>$48.00  </td>
+                                                  <td>$1,248.00  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td><input type="radio" name="gender" value="male">Individual + Child(ren)</td>
+                                                  <td>$91.00  </td>
+                                                  <td>$2,366.00  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td><input type="radio" name="gender" value="male">Individual + Spouse/Domestic partner</td>
+                                                  <td>$106.00  </td>
+                                                  <td>$2,756.00 </td>
+                                                </tr>
+                                                <tr>
+                                                  <td><input type="radio" name="gender" value="male">Family</td>
+                                                  <td>$160.00  </td>
+                                                  <td>$4,160.00 </td>
+                                                </tr>
+                                              </table>
+                                              
+                                    </div>
+                                        <!-- <PPO -->
+                                            <div *ngIf="selectedPlan=='PPO Plan'" >
+                                                <h6 class="text-center">PPO Plan</h6>
+                                        <table    border="1" cellpadding="5" cellspacing="5" width="100%" style="background-color:white;">
+                                                <tr>
+                                                   <th>General Plan Provisions</th>
+                                                    <th scope="col" colspan="2" >2020 Benefit</th>
+                                                </tr>
+                                                <tr>
+                                                   <td></td>       
+                                                            <td style= "width: 30%;" ><b>In-network</b></td>
+                                                            <td style= "width: 30%;"><b>Out-Of-Network</b></td> 
+                                                </tr>
+                                                <tr>
+                                                <td>
+                                                        Calendar Year Deductible
+                                                </td>  
+                                                <td style= "width: 30%;">$500 Individual/$1,500 Family </td>	
+                                                <td style= "width: 30%;">$800 Individual/$2,400 Family </td>       
+                                                     </tr>
+                                                   <tr>
+                                                <td>
+                                                        Calendar Year Deductible Pharmacy
+                                                </td>  
+                                                <td style= "width: 30%;">$50 Individual/$150 Family  </td>	
+                                                <td style= "width: 30%;">$50 Individual/$150 Family  </td>       
+                                                     </tr>  
+                                                 <tr>
+                                                 <td>Coinsurance</td>  
+                                                 <td style= "width: 30%;">The Plan pays 90% after deductible for most services  </td>	
+                                                  <td style= "width: 30%;">The Plan pays 70% after deductible for most services  </td>       
+                                                </tr> 
+                                                <tr>
+                                                 <td><b>Out-of-Pocket maximum</b> </td>   
+                                                 <td></td> 
+                                                 <td></td>     
+                                                </tr> 
+                                                <tr>
+                                                 <td>Individual </td>     
+                                                 <td style= "width: 30%;">$3,100   </td>	
+                                                <td style= "width: 30%;">$6,200  </td>  
+                                                </tr> 
+                                                 <tr>
+                                                 <td>Family </td>     
+                                                 <td style= "width: 30%;">$6,200   </td>	
+                                                <td style= "width: 30%;">$12,400  </td>  
+                                                </tr>  
+                                                 <tr>
+                                                 <td>Copayments apply to Out-of-Pocket Maximum?</td>     
+                                                 <td style= "width: 30%;">Yes </td>	
+                                                <td style= "width: 30%;">No</td>  
+                                                </tr> 
+                                                  <tr>
+                                                 <td>IndividualRX</td>     
+                                                 <td style= "width: 30%;">$2,000   </td>	
+                                                <td style= "width: 30%;">None</td>  
+                                                </tr>
+                                                 <tr>
+                                                 <td>FamilyRX</td>     
+                                                 <td style= "width: 30%;">$4,000  </td>	
+                                                <td style= "width: 30%;">None</td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Copayments apply to Out-of-Pocket Maximum RX?</td>     
+                                                 <td style= "width: 30%;">Yes.</td>	
+                                                <td style= "width: 30%;">N/A</td>  
+                                                </tr> 
+                                                  <tr>
+                                                 <td>Lifetime Maximum</td>     
+                                                 <td style= "width: 30%;">Unlimited  </td>	
+                                                <td style= "width: 30%;">Unlimited  </td>  
+                                                </tr>
+                                                 <tr>
+                                                 <td>Adult Dependent (Child)</td>     
+                                                 <td style= "width: 30%;">No, unless qualifies as disabled prior to age 26.</td>	
+                                                <td style= "width: 30%;">No, unless qualifies as disabled prior to age 26.</td>  
+                                                </tr> 
+                                                 <tr>
+                                                 <td>Dependent age limits</td>     
+                                                 <td style= "width: 30%;">Age 26</td>	
+                                                <td style= "width: 30%;">Age 26 </td>  
+                                                </tr> 
+                                                  <tr>
+                                                 <td>Coverage ends</td>     
+                                                 <td style= "width: 30%;">End of calendar year </td>	
+                                                <td style= "width: 30%;">End of calendar year  </td>  
+                                                </tr> 
+                                                  <tr>
+                                                 <td>PCP Selection Required</td>     
+                                                 <td style= "width: 30%;">No</td>	
+                                                <td style= "width: 30%;">No</td>  
+                                                </tr> 
+                                                 <tr>
+                                                 <td>Coverage Outside of US</td>     
+                                                 <td style= "width: 30%;">Yes. For out of country claims at participating worldwide BlueCard facilities, claims are processed at the in-network level. Otherwise, claims processed at out-of-network level. </td>	
+                                                <td style= "width: 30%;">Yes, at out-of-network level  </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td><b>Outpatient Benefits</b></td>     
+                                                 <td></td>	
+                                                <td></td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td><b>Preventive Care Services</b></td>     
+                                                 <td></td>	
+                                                <td></td>  
+                                                </tr>
+                                                <tr>
+                                                 <td>Annual routine adult physical exams</td>     
+                                                 <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>   
+                                                 <tr>
+                                                 <td>Well Child/Baby care including immunizations</td>     
+                                                 <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>
+                                                <tr>
+                                                 <td>Annual Well Woman exam</td>     
+                                                 <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>  
+                                                 <tr>
+                                                 <td>Cancer Screening</td>     
+                                                 <td style= "width: 30%;"></td>	
+                                                <td style= "width: 30%;"></td>  
+                                                </tr>  
+                                                <tr>
+                                                 <td>Mammogram</td>     
+                                                 <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>  
+                                                <tr>
+                                                 <td>Prostate</td>     
+                                                 <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>  
+                                                 <tr>
+                                                 <td>Pap Smear (lab work)</td>     
+                                                 <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr> 
+                                                  <tr>
+                                                 <td>Colorectal Screening</td>     
+                                                 <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>
+                                                 <tr>
+                                                 <td>Physician Office Visits </td>     
+                                                 <td style= "width: 30%;"></td>	
+                                                <td style= "width: 30%;"></td>  
+                                                </tr> 
+                                                  <tr>
+                                                 <td>Illness/Injury</td>     
+                                                 <td style= "width: 30%;">$25 copay, then the Plan pays 100%   </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible   </td>  
+                                                </tr> 
+                                                  <tr>
+                                                 <td>Specialist Visits</td>     
+                                                 <td style= "width: 30%;">$40 copay, then the Plan pays 100%   </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible   </td>  
+                                                </tr> 
+                                                 <tr>
+                                                 <td>Allergy testing & diagnosis</td>     
+                                                 <td style= "width: 30%;">$25 PCP/$40 Specialist copay, then the Plan pays 100%   </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>  
+                                                <tr>
+                                                 <td>Allergy Injections</td>     
+                                                 <td style= "width: 30%;">In Conjunction with Office Visit: $25 PCP/$40 Specialist copay, then the Plan pays 100%. Otherwise, the Plan pays 100%. Other Facility: The Plan pays 90% after deductible   </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                                </tr>
+                                                 <tr>
+                                                 <td>Maternity Care </td>     
+                                                 <td style= "width: 30%;"> </td>	
+                                                <td style= "width: 30%;"></td>  
+                                                </tr> 
+                                                 <tr>
+                                                 <td>Initial Visit</td>     
+                                                 <td style= "width: 30%;"> $25 copay, then the Plan pays 100%  </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Subsequent Office Visits</td>     
+                                                 <td style= "width: 30%;"> The Plan pays 100% for routine office visits </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>  
+                                                <tr>
+                                                 <td>Outpatient Surgery</td>     
+                                                 <td style= "width: 30%;"> </td>	
+                                                <td style= "width: 30%;"></td>  
+                                                </tr> 
+                                                 <tr>
+                                                 <td>Copay per service (physician office/facility)</td>     
+                                                 <td style= "width: 30%;"> Outpatient Facility: $100 copay, then the Plan pays 90% after deductible. Physician's Office: $25 PCP/$40 Specialist copay, then the Plan pays 100% after deductible  </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td><b>Outpatient Rehabilitation</b>  </td>     
+                                                 <td style= "width: 30%;"> </td>	
+                                                <td style= "width: 30%;"></td>  
+                                                </tr> 
+                                                 <tr>
+                                                 <td>Speech Therapy</td>     
+                                                 <td style= "width: 30%;"> Physician's Office: $40 copay, then the Plan pays 100%. Outpatient Facility: The Plan pays 90% after deductible </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>
+                                                <tr>
+                                                 <td>Occupational Therapy</td>     
+                                                 <td style= "width: 30%;"> Physician's Office: $40 copay, then the Plan pays 100%. Outpatient Facility: The Plan pays 90% after deductible  </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>
+                                                <tr>
+                                                 <td>Physical Therapy</td>     
+                                                 <td style= "width: 30%;"> Physician's Office: $40 copay, then the Plan pays 100%. Outpatient Facility: The Plan pays 90% after deductible  </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>  
+                                                  <tr>
+                                                 <td>Limits</td>     
+                                                 <td style= "width: 30%;"> 30 visits per calendar year per therapy combined in- and out-of-network. Additional visits allowed if determined medically necessary after review  </td>	
+                                                <td style= "width: 30%;">30 visits per calendar year per therapy combined in- and out-of-network. Additional visits allowed if determined medically necessary after review  </td>  
+                                                </tr> 
+                                                 <tr>
+                                                 <td>Urgent Care Centers</td>     
+                                                 <td style= "width: 30%;">$40 copay, then the Plan pays 100% </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                                </tr>
+                                                 <tr>
+                                                 <td><b>Inpatient Benefits</b> </td>     
+                                                 <td style= "width: 30%;"> </td>	
+                                                <td style= "width: 30%;"> </td>  
+                                                </tr> 
+                                                 <tr>
+                                                 <td>Inpatient Hospital Benefits </td>     
+                                                 <td style= "width: 30%;"> </td>	
+                                                <td style= "width: 30%;"> </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Hospital room & board; services, supplies,&medication (includes maternity care) </td>     
+                                                 <td style= "width: 30%;">$250 copay per admission, then the Plan pays 90% after deductible  </td>	
+                                                <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Physician Services </td>     
+                                                 <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Surgery Services</td>     
+                                                 <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Anesthesiology </td>     
+                                                 <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Emergency Care </td>     
+                                                 <td style= "width: 30%;">   </td>	
+                                                <td style= "width: 30%;">   </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Emergency Room Services</td>     
+                                                 <td style= "width: 30%;">$250 copay, then the Plan pays 100%; copay waived if admitted </td>	
+                                                <td style= "width: 30%;"> $250 copay, then the Plan pays 100%; copay waived if admitted</td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Ambulance Services</td>     
+                                                 <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Mental Health/Substance Abuse Benefits </td>     
+                                                 <td style= "width: 30%;"> </td>	
+                                                <td style= "width: 30%;"></td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Mental Health Inpatient</td>     
+                                                 <td style= "width: 30%;">$250 copay per admission, then the Plan pays 90% after deductible   </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr> 
+                                                 <tr>
+                                                 <td>Mental Health Outpatient</td>     
+                                                 <td style= "width: 30%;">$25 copay, then the Plan pays 100%   </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr>
+                                                 <tr>
+                                                 <td>Substance Abuse Inpatient</td>     
+                                                 <td style= "width: 30%;">$250 copay per admission, then the Plan pays 90% after deductible </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td>Substance Abuse Outpatient</td>       
+                                                 <td style= "width: 30%;">$25 copay, then the Plan pays 100%   </td>	
+                                                <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                </tr> 
+                                                <tr>
+                                                 <td><b>Prescription Drug Benefits</b></td>     
+                                                 <td style= "width: 30%;"></td>	
+                                                <td style= "width: 30%;"> </td>  
+                                                </tr>
+                                                 <tr>
+                                                 <td>Prescription Drugs</td>     
+                                                 <td style= "width: 30%;">Retail (Up to a 30-day supply) 
+                                                        Retail (Up to a 30-day supply) 
+    Participating Pharmacies 
+    Generic: 10% coinsurance (Minimum: $10) 
+    Preferred Brand: 20% coinsurance (Minimum: $30 Maximum $90) 
+    Non-Preferred Brand: 30% coinsurance (Minimum: $50, Maximum $150) 
+    Participant pays difference between brand and generic drugs. Difference will not accumulate to the OOP Maximum 
+    Mandatory Generics will be required unless a medical necessity waiver is provided by a physician 
+    Mail Order (Up to a 90-day supply) 
+    Generic: $20 copay 
+    Preferred Brand: $70 copay 
+    Non-Preferred Brand: $130 copay 
+    Specialty Pharmacy: Same as retail copayments 
+    Maintenance drugs must be filled through Plan's Rx mail service or through participating 90-day retail pharmacies 
+    Mandatory Generics will be required unless a medical necessity waiver is provided by a physician medical necessity waiver is provided by a physician 
+     </td>	
+                                                <td style= "width: 30%;">Retail (Up to a 30-day supply) 
+    Retail (Up to a 30-day supply) 
+    Non-participating Pharmacies 
+    Claims must be filed directly with Anthem Prescription Management 
+    
+    
+    
+    Mandatory Generics will be required unless a medical necessity waiver is provided by a physician 
+    Mail Order 
+    Not Covered 
+    
+    
+    
+                                                        </td>  
+                                                </tr>
+                                                <tr>
+                                                  <td><b>Other Services, Supplies and Facilities</b></td>       
+                                                    <td style= "width: 30%;"> </td>	
+                                                   <td style= "width: 30%;"></td>  
+                                                   </tr> 
+                                                     <tr>
+                                                    <td>Acupuncture</td>       
+                                                    <td style= "width: 30%;"> $40 copay, then the Plan pays 100% in conjunction with an office visit (covered services limited to treatment of nausea and vomiting associated with surgery, chemotherapy, and pregnancy) </td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible (covered services limited to treatment of nausea and vomiting associated with surgery, chemotherapy and pregnancy </td>  
+                                                   </tr> 
+                                                    <tr>
+                                                    <td>Lab and X-ray</td>       
+                                                    <td style= "width: 30%;"> Physician's Office: $25 PCP/$40 Specialist copay, then the Plan pays 100%. Outpatient Facility: The Plan pays 90% after deductible  </td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                   </tr>
+                                                   <tr>
+                                                    <td>Durable Medical Equipment (DME)</td>       
+                                                    <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                   </tr> 
+                                                   <tr>
+                                                    <td>Spinal Manipulations/Chiropractic</td>       
+                                                    <td style= "width: 30%;"> $40 copay, then the Plan pays 100%, 30 visits per calendar year maximum (combined in-network and out-of-network)  </td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible, 30 visits per calendar year maximum (combined in-network and out-of-network)   </td>  
+                                                   </tr>
+                                                   <tr>
+                                                    <td>Family Planning</td>       
+                                                    <td style= "width: 30%;"> Office Visit: $40 copay, then the Plan pays 100%. Other Office Services: The Plan pays 90%. Other Facility: The Plan pays 90% after deductible; $25,000 lifetime maximum for all Family Planning services including Artificial Insemination, IVF, GIFT, and ZIFT (in-network and out-of-network combined)  </td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible; $25,000 lifetime maximum for all Family Planning services including Artificial Insemination, IVF, GIFT, and ZIFT (in-network and out-of-network combined)   </td>  
+                                                   </tr> 
+                                                   <tr>
+                                                    <td>Artificial Insemination</td>       
+                                                    <td style= "width: 30%;"> Office Visit: $40 copay, then the Plan pays 100%. Other Office Services: The Plan pays 90%. Other Facility: The Plan pays 90% after deductible   </td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible   </td>  
+                                                   </tr> 
+                                                   <tr>
+                                                    <td>IVF/GIFT/ZIFT</td>       
+                                                    <td style= "width: 30%;"> Office Visit: $40 copay, then the Plan pays 100%. Other Office Services: The Plan pays 90%. Other Facility: The Plan pays 90% after deductible   </td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible   </td>  
+                                                   </tr> 
+                                                   <tr>
+                                                    <td>Infertility Drug Coverage</td>       
+                                                    <td style= "width: 30%;">$15,000 lifetime maximum for Infertility Drug coverage (in-network and out-of-network combined</td>	
+                                                   <td style= "width: 30%;">$15,000 lifetime maximum for Infertility Drug coverage (in-network and out-of-network combined)  </td>  
+                                                   </tr> 
+                                                   <tr>
+                                                    <td>Hospice Care</td>       
+                                                    <td style= "width: 30%;"> The Plan pays 90% after deductible, 360 days lifetime maximum (in-network and out-of-network combined) </td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible, 360 days lifetime maximum (in-network and out-of-network combined) </td>  
+                                                   </tr> 
+                                                   <tr>
+                                                    <td>Skilled Nursing Facilities</td>       
+                                                    <td style= "width: 30%;"> $100 copay, then the Plan pays 90% after deductible </td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible .</td>  
+                                                   </tr> 
+                                                    <tr>
+                                                    <td>Limits</td>       
+                                                    <td style= "width: 30%;"> 120 days per calendar year (in-network and out-of-network combined) </td>	
+                                                   <td style= "width: 30%;">120 days per calendar year (in-network and out-of-network combined) </td>  
+                                                   </tr>
+                                                   <tr>
+                                                    <td>Home Health Care</td>       
+                                                    <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                   </tr>
+                                                   <tr>
+                                                    <td>Home Health Care Limit</td>       
+                                                    <td style= "width: 30%;"> 100 visits per calendar year (in-network and out-of-network combined)  </td>	
+                                                   <td style= "width: 30%;">100 visits per calendar year (in-network and out-of-network combined)  </td>  
+                                                   </tr> 
+                                                    <tr>
+                                                    <td>Vision and Hearing</td>       
+                                                    <td style= "width: 30%;"> Vision: The Plan pays 100% in conjunction with an annual physical exam. Hearing: The Plan pays 100% for routine hearing exams covered as part of annual physical exams.</td>	
+                                                   <td style= "width: 30%;">The Plan pays 70% after deductible in conjunction with </td>  
+                                                   </tr>
+                                            </table>
+                                            <br>
+                                            <table border="1" cellpadding="5" cellspacing="5" width="100%" style="background-color:white;">
+                                                    <tr>
+                                                      <th>Covered Members</th>
+                                                      <th>Bi Weekly Cost</th>
+                                                      <th>Annual Cost</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="radio" name="gender" value="male"> Individual Only</td>
+                                                      <!-- <td>Individual Only</td> -->
+                                                      <td>$35.00 </td>
+                                                      <td>$358.00 </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td><input type="radio" name="gender" value="male">Individual + Child(ren)</td>
+                                                      <td>$40.00 </td>
+                                                      <td>$810.00 </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td><input type="radio" name="gender" value="male">Individual + Spouse/Domestic partner</td>
+                                                      <td>$50.00 </td>
+                                                      <td>$2,040.00 </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td><input type="radio" name="gender" value="male">Family</td>
+                                                      <td>$81.00 </td>
+                                                      <td>$1,686.00 </td>
+                                                    </tr>
+                                                  </table>
+                                            </div>
+                                             <!-- Basic -->
+                                             <div *ngIf="selectedPlan=='Basic Health Plan'">
+                                                <h6 class="text-center">Basic Health Plan</h6>
+                                                    <table  border="1" cellpadding="5" cellspacing="5" width="100%" style="background-color:white;">
+                                                            <tr>
+                                                               <th>General Plan Provisions</th>
+                                                                <th scope="col" colspan="2" >2020 Benefit</th>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>       
+                                                                        <td style= "width: 30%;" ><b>In-network</b></td>
+                                                                        <td style= "width: 30%;"><b>Out-Of-Network</b></td> 
+                                                            </tr>
+                                                            <tr>
+                                                            <td>
+                                                                    Calendar Year Deductible
+                                                            </td>  
+                                                            <td style= "width: 30%;">$4,000 Individual/$8,000 Family; in-network and out-of-network combined  </td>	
+                                                            <td style= "width: 30%;">$4,000 Individual/$8,000 Family; in-network and out-of-network combined  </td>       
+                                                                 </tr>
+                                                               <tr>
+                                                            <td>
+                                                                    Calendar Year Deductible Pharmacy
+                                                            </td>  
+                                                            <td style= "width: 30%;">Combined with Medical   </td>	
+                                                            <td style= "width: 30%;">Combined with Medical   </td>       
+                                                                 </tr>  
+                                                             <tr>
+                                                             <td>Coinsurance</td>  
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible for most services  </td>	
+                                                              <td style= "width: 30%;">The Plan pays 70% after deductible for most services  </td>       
+                                                            </tr> 
+                                                            <tr>
+                                                             <td><b>Out-of-Pocket maximum</b> </td>   
+                                                             <td></td> 
+                                                             <td></td>     
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Individual </td>     
+                                                             <td style= "width: 30%;">$5,000   </td>	
+                                                            <td style= "width: 30%;">$7,000  </td>  
+                                                            </tr> 
+                                                             <tr>
+                                                             <td>Family </td>     
+                                                             <td style= "width: 30%;">$10,000   </td>	
+                                                            <td style= "width: 30%;">$14,000  </td>  
+                                                            </tr>  
+                                                             <tr>
+                                                             <td>Copayments apply to Out-of-Pocket Maximum?</td>     
+                                                             <td style= "width: 30%;">N/A </td>	
+                                                            <td style= "width: 30%;">N/A</td>  
+                                                            </tr> 
+                                                              <tr>
+                                                             <td>IndividualRX</td>     
+                                                             <td style= "width: 30%;">Combined with Medical  </td>	
+                                                            <td style= "width: 30%;">Combined with Medical </td>  
+                                                            </tr>
+                                                             <tr>
+                                                             <td>FamilyRX</td>     
+                                                             <td style= "width: 30%;">Combined with Medical </td>	
+                                                            <td style= "width: 30%;">Combined with Medical </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Copayments apply to Out-of-Pocket Maximum RX?</td>     
+                                                             <td style= "width: 30%;">N/A</td>	
+                                                            <td style= "width: 30%;">N/A</td>  
+                                                            </tr> 
+                                                              <tr>
+                                                             <td>Lifetime Maximum</td>     
+                                                             <td style= "width: 30%;">Unlimited  </td>	
+                                                            <td style= "width: 30%;">Unlimited  </td>  
+                                                            </tr>
+                                                             <tr>
+                                                             <td>Adult Dependent (Child)</td>     
+                                                             <td style= "width: 30%;">No, unless qualifies as disabled prior to age 26.</td>	
+                                                            <td style= "width: 30%;">No, unless qualifies as disabled prior to age 26.</td>  
+                                                            </tr> 
+                                                             <tr>
+                                                             <td>Dependent age limits</td>     
+                                                             <td style= "width: 30%;">Age 26</td>	
+                                                            <td style= "width: 30%;">Age 26 </td>  
+                                                            </tr> 
+                                                              <tr>
+                                                             <td>Coverage ends</td>     
+                                                             <td style= "width: 30%;">End of calendar year </td>	
+                                                            <td style= "width: 30%;">End of calendar year  </td>  
+                                                            </tr> 
+                                                              <tr>
+                                                             <td>PCP Selection Required</td>     
+                                                             <td style= "width: 30%;">No</td>	
+                                                            <td style= "width: 30%;">No</td>  
+                                                            </tr> 
+                                                             <tr>
+                                                             <td>Coverage Outside of US</td>     
+                                                             <td style= "width: 30%;">Yes. Request coverage verification for foreign travel. Foreign claims covered at out-of-network level. Emergency care covered at in-network level.  </td>	
+                                                            <td style= "width: 30%;">Yes. Request coverage verification for foreign travel. Foreign claims covered at out-of-network level. Emergency care covered at in-network level. </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td><b>Outpatient Benefits</b></td>     
+                                                             <td></td>	
+                                                            <td></td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td><b>Preventive Care Services</b></td>     
+                                                             <td></td>	
+                                                            <td></td>  
+                                                            </tr>
+                                                            <tr>
+                                                             <td>Annual routine adult physical exams</td>     
+                                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>   
+                                                             <tr>
+                                                             <td>Well Child/Baby care including immunizations</td>     
+                                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>
+                                                            <tr>
+                                                             <td>Annual Well Woman exam</td>     
+                                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>  
+                                                             <tr>
+                                                             <td>Cancer Screening</td>     
+                                                             <td style= "width: 30%;"></td>	
+                                                            <td style= "width: 30%;"></td>  
+                                                            </tr>  
+                                                            <tr>
+                                                             <td>Mammogram</td>     
+                                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>  
+                                                            <tr>
+                                                             <td>Prostate</td>     
+                                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>  
+                                                             <tr>
+                                                             <td>Pap Smear (lab work)</td>     
+                                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr> 
+                                                              <tr>
+                                                             <td>Colorectal Screening</td>     
+                                                             <td style= "width: 30%;">The Plan pays 100% </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>
+                                                             <tr>
+                                                             <td>Physician Office Visits </td>     
+                                                             <td style= "width: 30%;"></td>	
+                                                            <td style= "width: 30%;"></td>  
+                                                            </tr> 
+                                                              <tr>
+                                                             <td>Illness/Injury</td>     
+                                                             <td style= "width: 30%;">$25 copay, then the Plan pays 90%   </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible   </td>  
+                                                            </tr> 
+                                                              <tr>
+                                                             <td>Specialist Visits</td>     
+                                                             <td style= "width: 30%;">$40 copay, then the Plan pays 90%   </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible   </td>  
+                                                            </tr> 
+                                                             <tr>
+                                                             <td>Allergy testing & diagnosis</td>     
+                                                             <td style= "width: 30%;">$25 PCP/$40 Specialist copay, then the Plan pays 90%   </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>  
+                                                            <tr>
+                                                             <td>Allergy Injections</td>     
+                                                             <td style= "width: 30%;">In Conjunction with Office Visit: $25 PCP/$40 Specialist copay, then the Plan pays 100%. Otherwise, the Plan pays 100%. Other Facility: The Plan pays 90% after deductible   </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                                            </tr>
+                                                             <tr>
+                                                             <td>Maternity Care </td>     
+                                                             <td style= "width: 30%;"> </td>	
+                                                            <td style= "width: 30%;"></td>  
+                                                            </tr> 
+                                                             <tr>
+                                                             <td>Initial Visit</td>     
+                                                             <td style= "width: 30%;"> $25 copay, then the Plan pays 90%  </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Subsequent Office Visits</td>     
+                                                             <td style= "width: 30%;"> The Plan pays 90% for routine office visits </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>  
+                                                            <tr>
+                                                             <td>Outpatient Surgery</td>     
+                                                             <td style= "width: 30%;"> </td>	
+                                                            <td style= "width: 30%;"></td>  
+                                                            </tr> 
+                                                             <tr>
+                                                             <td>Copay per service (physician office/facility)</td>     
+                                                             <td style= "width: 30%;"> The Plan pays 90% after deductible   </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td><b>Outpatient Rehabilitation</b>  </td>     
+                                                             <td style= "width: 30%;"> </td>	
+                                                            <td style= "width: 30%;"></td>  
+                                                            </tr> 
+                                                             <tr>
+                                                             <td>Speech Therapy</td>     
+                                                             <td style= "width: 30%;"> Physician's Office: $40 copay, then the Plan pays 100%. Outpatient Facility: The Plan pays 90% after deductible </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>
+                                                            <tr>
+                                                             <td>Occupational Therapy</td>     
+                                                             <td style= "width: 30%;"> Physician's Office: $40 copay, then the Plan pays 100%. Outpatient Facility: The Plan pays 90% after deductible  </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>
+                                                            <tr>
+                                                             <td>Physical Therapy</td>     
+                                                             <td style= "width: 30%;"> Physician's Office: $40 copay, then the Plan pays 100%. Outpatient Facility: The Plan pays 90% after deductible  </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>  
+                                                              <tr>
+                                                             <td>Limits</td>     
+                                                             <td style= "width: 30%;"> 30 visits per calendar year per therapy combined in- and out-of-network. Additional visits allowed if determined medically necessary after review  </td>	
+                                                            <td style= "width: 30%;">30 visits per calendar year per therapy combined in- and out-of-network. Additional visits allowed if determined medically necessary after review  </td>  
+                                                            </tr> 
+                                                             <tr>
+                                                             <td>Urgent Care Centers</td>     
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible  </td>  
+                                                            </tr>
+                                                             <tr>
+                                                             <td><b>Inpatient Benefits</b> </td>     
+                                                             <td style= "width: 30%;"> </td>	
+                                                            <td style= "width: 30%;"> </td>  
+                                                            </tr> 
+                                                             <tr>
+                                                             <td>Inpatient Hospital Benefits </td>     
+                                                             <td style= "width: 30%;"> </td>	
+                                                            <td style= "width: 30%;"> </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Hospital room & board; services, supplies,&medication (includes maternity care) </td>     
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible   </td>	
+                                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Physician Services </td>     
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Surgery Services</td>     
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Anesthesiology </td>     
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                            <td style= "width: 30%;"> The Plan pays 70% after deductible </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Emergency Care </td>     
+                                                             <td style= "width: 30%;">   </td>	
+                                                            <td style= "width: 30%;">   </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Emergency Room Services</td>     
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                            <td style= "width: 30%;"> The Plan pays 90% after deductible </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Ambulance Services</td>     
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                            <td style= "width: 30%;"> The Plan pays 90% after deductible  </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Mental Health/Substance Abuse Benefits </td>     
+                                                             <td style= "width: 30%;"> </td>	
+                                                            <td style= "width: 30%;"></td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Mental Health Inpatient</td>     
+                                                             <td style= "width: 30%;">$250 copay per admission, then the Plan pays 90% after deductible   </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr> 
+                                                             <tr>
+                                                             <td>Mental Health Outpatient</td>     
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr>
+                                                             <tr>
+                                                             <td>Substance Abuse Inpatient</td>     
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible  </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td>Substance Abuse Outpatient</td>       
+                                                             <td style= "width: 30%;">The Plan pays 90% after deductible   </td>	
+                                                            <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                            </tr> 
+                                                            <tr>
+                                                             <td><b>Prescription Drug Benefits</b></td>     
+                                                             <td style= "width: 30%;"></td>	
+                                                            <td style= "width: 30%;"> </td>  
+                                                            </tr>
+                                                             <tr>
+                                                             <td>Prescription Drugs</td>     
+                                                             <td style= "width: 30%;">Retail (Up to a 30-day supply) 
+                                                                    Retail (Up to a 30-day supply) 
+                Retail (Up to a 30-day supply) 
+                Participating Pharmacies 
+                The Plan pays 90% after deductible 
+                
+                
+                Participant pays difference between brand and generic drugs. Difference will not accumulate to the OOP Maximum. 
+                Mandatory Generics will be required unless a medical necessity waiver is provided by a physician 
+                Mail Order (Up to a 90-day supply) 
+                The Plan pays 90% after deductible 
+                
+                
+                Specialty Pharmacy: The Plan pays 90% after deductible 
+                Maintenance drugs must be filled through Plan's Rx mail service or through participating 90-day retail pharmacies 
+                Mandatory Generics will be required unless a medical necessity waiver is provided by a physician 
+                
+                 </td>	
+                                                            <td style= "width: 30%;">Retail (Up to a 30-day supply) 
+                Retail (Up to a 30-day supply) 
+                Retail (Up to a 30-day supply) 
+                Non-participating Pharmacies 
+                The Plan pays 70% after deductible 
+                
+                
+                
+                Mandatory Generics will be required unless a medical necessity waiver is provided by a physician 
+                Mail Order 
+                Not Covered 
+                
+                
+                
+                
+                
+                
+                
+                                                                    </td>  
+                                                            </tr>
+                                                            <tr>
+                                                              <td><b>Other Services, Supplies and Facilities</b></td>       
+                                                                <td style= "width: 30%;"> </td>	
+                                                               <td style= "width: 30%;"></td>  
+                                                               </tr> 
+                                                                 <tr>
+                                                                <td>Acupuncture</td>       
+                                                                <td style= "width: 30%;"> Not Covered  </td>	
+                                                               <td style= "width: 30%;">Not Covered  </td>  
+                                                               </tr> 
+                                                                <tr>
+                                                                <td>Lab and X-ray</td>       
+                                                                <td style= "width: 30%;"> The Plan pays 90% after deductible  </td>	
+                                                               <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                               </tr>
+                                                               <tr>
+                                                                <td>Durable Medical Equipment (DME)</td>       
+                                                                <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                                               <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                               </tr> 
+                                                               <tr>
+                                                                <td>Spinal Manipulations/Chiropractic</td>       
+                                                                <td style= "width: 30%;"> Not Covered   </td>	
+                                                               <td style= "width: 30%;">Not Covered   </td>  
+                                                               </tr>
+                                                               <tr>
+                                                                <td>Family Planning</td>       
+                                                                <td style= "width: 30%;"> Not Covered  </td>	
+                                                               <td style= "width: 30%;">Not Covered  </td>  
+                                                               </tr> 
+                                                               <tr>
+                                                                <td>Artificial Insemination</td>       
+                                                                <td style= "width: 30%;"> Not Covered   </td>	
+                                                               <td style= "width: 30%;">Not Covered  </td>  
+                                                               </tr> 
+                                                               <tr>
+                                                                <td>IVF/GIFT/ZIFT</td>       
+                                                                <td style= "width: 30%;">Not Covered    </td>	
+                                                               <td style= "width: 30%;">Not Covered   </td>  
+                                                               </tr> 
+                                                               <tr>
+                                                                <td>Infertility Drug Coverage</td>       
+                                                                <td style= "width: 30%;">Not Covered </td>	
+                                                               <td style= "width: 30%;">Not Covered   </td>  
+                                                               </tr> 
+                                                               <tr>
+                                                                <td>Hospice Care</td>       
+                                                                <td style= "width: 30%;"> The Plan pays 90% after deductible, 360 days lifetime maximum (in-network and out-of-network combined)  </td>	
+                                                               <td style= "width: 30%;">The Plan pays 70% after deductible, 360 days lifetime maximum (in-network and out-of-network combined)  </td>  
+                                                               </tr> 
+                                                               <tr>
+                                                                <td>Skilled Nursing Facilities</td>       
+                                                                <td style= "width: 30%;"> The Plan pays 90% after deductible  </td>	
+                                                               <td style= "width: 30%;">The Plan pays 70% after deductible .</td>  
+                                                               </tr> 
+                                                                <tr>
+                                                                <td>Limits</td>       
+                                                                <td style= "width: 30%;"> 120 days per calendar year (in-network and out-of-network combined) </td>	
+                                                               <td style= "width: 30%;">120 days per calendar year (in-network and out-of-network combined) </td>  
+                                                               </tr>
+                                                               <tr>
+                                                                <td>Home Health Care</td>       
+                                                                <td style= "width: 30%;"> The Plan pays 90% after deductible </td>	
+                                                               <td style= "width: 30%;">The Plan pays 70% after deductible </td>  
+                                                               </tr>
+                                                               <tr>
+                                                                <td>Home Health Care Limit</td>       
+                                                                <td style= "width: 30%;"> 100 visits per calendar year (in-network and out-of-network combined)  </td>	
+                                                               <td style= "width: 30%;">100 visits per calendar year (in-network and out-of-network combined)  </td>  
+                                                               </tr> 
+                                                                <tr>
+                                                                <td>Vision and Hearing</td>       
+                                                                <td style= "width: 30%;"> Vision: The Plan pays 100% in conjunction with an annual physical exam. Hearing: The Plan pays 100% for routine hearing exams covered as part of annual physical exams.</td>	
+                                                               <td style= "width: 30%;">The Plan pays 70% after deductible in conjunction with </td>  
+                                                               </tr>
+                                                        </table>
+                                                        <br>
+                                                        <table border="1" cellpadding="5" cellspacing="5" width="100%" style="background-color:white;">
+                                                                <tr>
+                                                                  <th>Covered Members</th>
+                                                                  <th>Bi Weekly Cost</th>
+                                                                  <th>Annual Cost</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="radio" name="gender" value="male"> Individual Only</td>
+                                                                  <!-- <td>Individual Only</td> -->
+                                                                  <td>$18.00 </td>
+                                                                  <td>$468.00 </td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td><input type="radio" name="gender" value="male">Individual + Child(ren)</td>
+                                                                  <td>$35.00 </td>
+                                                                  <td>$910.00 </td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td><input type="radio" name="gender" value="male">Individual + Spouse/Domestic partner</td>
+                                                                  <td>$40.00 </td>
+                                                                  <td>$1,040.00 </td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td><input type="radio" name="gender" value="male">Family</td>
+                                                                  <td>$61.00 </td>
+                                                                  <td>$1,586.00 </td>
+                                                                </tr>
+                                                              </table>
+                                                              
+                                                        </div>
+                                <div class="container">
+                                        <div class="row">
+                                                <div class="col-sm-5">
+                                                    </div>
+                                            <div *ngFor="let item of listOfPlans">
+                                          <div *ngIf="selectedPlan==item.plan" class="col-sm">
+                                                <button   mat-raised-button (click)="textChange(item)">{{item.status}}</button>
+                                          </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                           
+                            </div>
+            </div>
+        </div>
+    </div>
+</div>
