@@ -1,8 +1,0 @@
-{
-  "/api": {
-    "target": "https://8becfn4z1d.execute-api.us-east-1.amazonaws.com",
-    "secure": false,
-    "changeOrigin":false
-    
-  }
-}
