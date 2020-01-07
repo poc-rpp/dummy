@@ -44,6 +44,7 @@ export class ServiceService {
   public benefits1 = new benefits;
   public selectedId;
   public variable;
+  public id;
   public username = sessionStorage.getItem('username');
   constructor(private httpClient: HttpClient) { }
   getValidation(details) {
@@ -99,6 +100,9 @@ export class ServiceService {
   getBenefitDetails(id) {
     console.log("hii from newpayment56");
     return this.httpClient.post("https://8becfn4z1d.execute-api.us-east-1.amazonaws.com/dev/detailed-benefit-summary", id);
+  }
+  set(){
+    this.variable=8;
   }
   decode(file: any): Observable<string> {
 

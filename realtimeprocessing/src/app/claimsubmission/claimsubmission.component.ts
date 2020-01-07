@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChildren, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ServiceService } from '../service.service';
 import { ClaimspopupComponent } from './claimspopup/claimspopup.component';
@@ -84,7 +84,11 @@ export class ClaimsubmissionComponent implements OnInit {
   ];
   ngOnInit() {
     this.selectedId= this._APIService.selectedId;
-    console.log(this._APIService.selectedId);
+    console.log(this._APIService.variable);
+    if(this._APIService.variable==8){
+      console.log("Hurray");
+    }
+
     this.patientfirstname=this._APIService.patientfirstname;
     this.patientlastname=this._APIService.patientlastname;
     this.details.first=this._APIService.patientfirstname;
@@ -92,7 +96,9 @@ export class ClaimsubmissionComponent implements OnInit {
     this.details.subscriber_id=this._APIService.selectedId;
     
   }
-
+ngAfterViewInit() {
+    console.log(this._APIService.variable);
+  }
   getProviderDetails(){
     
     this.spinnerService.show();

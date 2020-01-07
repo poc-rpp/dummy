@@ -66,9 +66,9 @@ export class ProviderActivityComponent implements OnInit {
   }  
   tabClick(tab) {
     console.log(tab);
-    this._APIService.variable=5;
     this.selectedIndex=tab.index;
     this.showQRCode= tab.index;
+    
     if(this.showQRCode===1){
       this.capture('notscan');
       // setTimeout(() => {
@@ -182,5 +182,8 @@ export class ProviderActivityComponent implements OnInit {
  }
  onVoted(index) {
   this.selectedIndex=index;
+}
+emitIndex(){
+  this.selectedIndex=0;
 }
 }

@@ -35,14 +35,15 @@ export class NavbarComponent implements OnInit {
   //   }
   // }
   ngOnInit() {
-    if(this.username == undefined) {
-      if(this._APIService.hasOwnProperty("username")) {
-        this._APIService.username = sessionStorage.getItem('username');
-        this._APIService.islogin = true;
-      }
-    }
+    // if(this.username == undefined) {
+    //   if(this._APIService.hasOwnProperty("username")) {
+    //     this._APIService.username = sessionStorage.getItem('username');
+    //     this._APIService.islogin = true;
+    //   }
+    // }
     this.username=this._APIService.username;
     this.islogin=this._APIService.islogin;
+    console.log(this._APIService.islogin)
   }
   ngOnChanges(){
     

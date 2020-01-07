@@ -21,7 +21,7 @@ export class PaymentComponent implements OnInit {
   }
   confirm() {
     let details = {
-      "member_id": "123456789",
+      "member_id": this._APIService.id,
       "visit_status": "paid"
     };
     this._APIService.getPayment(details).subscribe(
@@ -46,7 +46,7 @@ export class PaymentComponent implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe(result => {
-          console.log('The dialog was closed');
+          this._APIService.selectedId=0;
 
         });
       },

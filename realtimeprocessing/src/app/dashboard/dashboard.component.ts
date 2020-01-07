@@ -139,11 +139,15 @@ export class DashboardComponent implements OnInit {
   }
 
   submitService(patient) {
-    console.log(patient)
+    console.log(patient.member_id)
+    this._APIService.variable=7;
+    this._APIService.id=patient.member_id
+   this._APIService.set();
     this._APIService.patientfirstname=patient.firstname;
     this._APIService.patientlastname=patient.lastname;
     this._APIService.selectedId=patient.member_id;
     console.log(this._APIService.patientfirstname);
+    
     this.voted.emit("2");
     console.log(`Click on submit service for ${patient.member_id}`);
   }
