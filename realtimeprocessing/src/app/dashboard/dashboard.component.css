@@ -1,0 +1,92 @@
+.input{
+  border-width: 0px;
+}
+.pagination {
+  width: 100%;
+  text-align: center;
+  display: inherit;
+  margin-top: 5px;
+  align-content: center;
+}
+
+.col-sm-1 {
+    flex: 0 0 12.333333%;
+    max-width: 21.333333%;
+}
+.list:hover {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+  display: block;
+  height: 36px;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  padding: 0;
+}
+.pagination img {
+  width: auto;
+  height: auto;
+  max-height: 30px;
+  text-align: center;
+  margin: 0 auto;
+  align-content: center;
+}
+.patient-list:hover {
+  border: 1px solid #007bff;
+  padding: 10px;
+}
+.patient-list {
+  transition: .3s;
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+}
+.information {
+  color: rgba(0, 102, 178, 1);
+  font-size: 36px;
+}
+.data {
+  /* text-align: left; */
+  border: 1px solid rgba(122, 122, 122, .87);
+  /* margin: 0px; */
+}
+.data div {
+  bottom:0; 
+  right: 0;
+  position: absolute;
+  max-height: 100px;
+  font-weight: bold;
+  font-size: 24px;
+  padding-right: 25px;
+  padding-bottom: 34px;
+}
+.data p {
+  font-size: 52pt;
+}
+.data img {
+  display: block;
+  height: 75px;
+  width: auto;
+  margin: 10px;
+}
+.table-header {
+  border-bottom: 3px solid rgb(12, 109, 182);
+  width: 100%;
+  font-weight: bold;
+  bottom: 0;
+  position:absolute
+}
+.table-footer {
+  /* border-bottom: 3px solid rgb(12, 109, 182); */
+  width: 100%;
+  font-weight: bold;
+  bottom: 0;
+  top: 0;
+  position:absolute
+}

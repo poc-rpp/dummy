@@ -1,0 +1,18 @@
+<div style="width: 100%; padding:15px;">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>Payment Acknowledgement</h5>
+      Your transaction is complete and payment has been successfully processed. An email with itemized payments at
+      service level will be sent to your registered email id.
+      <div class="row">
+        <div class="col-sm-12">
+          <div style="text-align: right; padding-right: 20px;">
+            <button class="button button4" mat-raised-button [routerLink]="['/provideractivity']"><i>Reject Receiving Payment</i></button> &nbsp;
+            <button class="button button4" mat-raised-button (click)="confirm()"><i>Receive Payment</i></button>&nbsp;
+            <button class="button button4" mat-raised-button [mat-dialog-close]="" cdkFocusInitial>Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,196 @@
+
+<!-- <img *ngIf="loading && load" src="/assets/View ID Copy 2@3x.png"(click)="startTimer()" alt="Smiley face" height="100%" width="100%" top="20%">
+<img *ngIf="!loading && load" src="/assets/Card-1000ms (002).gif" alt="Smiley face" height="100%" width="100%" top="20%"> -->
+<!-- <div  *ngIf="loading" style="text-align:center">  
+    <h2>Scan QR code </h2>  
+    <input type="file"  #file name="file" id="file"  (change)="preview(file.files)">  
+    <ng2-qrcode-reader  *ngIf="loading && load" (result)="render($event)" [qrr-show]="showQRCode" [qrr-value]="value" [qrr-type]="elementType">  
+    </ng2-qrcode-reader><br>  
+    <div #result></div>  
+  </div> -->
+  <!-- <div id="app">
+      <div><video #video id="video" width="640" height="480" autoplay></video></div>
+      <div><button id="snap" (click)="capture()" >Snap Photo</button></div>
+      <canvas #canvas id="canvas" width="640" height="480"></canvas>
+     <ng2-qrcode-reader   (result)="render($event)" [qrr-show]="showQRCode" [qrr-value]="value" [qrr-type]="elementType">  
+        </ng2-qrcode-reader><br>  
+        <div #result></div>   
+      <ul>
+          <li *ngFor="let c of captures">
+              <img src="{{ c }}" height="50" />
+                <div #result></div>
+                <button (click)="close()">yiviv</button>
+          </li>
+    </ul> 
+  </div> -->
+<div *ngIf="yyes" class="container-fluid">
+<div class="main-content" >
+    <br>
+        <div class="row">
+            <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+        <div  class="card" >
+            
+          <div class="card-header text-center">
+            <h5 class="title"><i>Patient & Insured Information</i></h5>
+          </div>
+          <div class="card-body">
+                  <h5 id="error" *ngIf="loading"class="title text-center"><i>Error</i></h5>
+               
+              <div class="row">
+                <div class="col-md-4 pr-1">
+                  <div >
+                    <label>Insured's I.D Number*</label>
+                    <!-- <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc."> -->
+                    <input type="text"  [(ngModel)]="this.details.id" id="ip3"class="form-control" placeholder="Subscriber ID">
+                  </div>
+                </div>
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>Insured's Policy Group or FECA Number*</label>
+                    <input type="text"    id="ip3" class="form-control" placeholder="Username" value="Group Number">
+                  </div>
+                </div>
+                <!-- <div class="col-md-4 pl-1">
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input name="email" id="email" type="email" class="form-control" placeholder="Email">
+                  </div>
+                </div> -->
+              </div>
+              <div class="row">
+                  <div class="col-md-4 pr-1">
+                    <div >
+                      <label>Insured's Name(Last)</label>
+                      <input type="text"  id="ip4" class="form-control" placeholder="Last Name" >
+                    </div>
+                  </div>
+                  <div class="col-md-2 pl-1">
+                      <div>
+                        <label>Middle Initial</label>
+                        <input type="text"   id="ip6" class="form-control" placeholder="M.I" >
+                      </div>
+                    </div>
+                  <div class="col-md-6 pl-1">
+                    <div>
+                      <label>Insured Name(First)</label>
+                      <input type="text"  id="ip4" class="form-control" placeholder="First Name" >
+                    </div>
+                  </div>
+                  
+                </div>
+                <br>
+              <div class="row">
+                <div class="col-md-4 pr-1">
+                  <div >
+                    <label>Patient's Name(Last)*</label>
+                    <input type="text" value="Smith" id="ip4" class="form-control" placeholder="Last Name" >
+                  </div>
+                </div>
+                <div class="col-md-2 pl-1">
+                    <div>
+                      <label>Middle Initial</label>
+                      <input type="text" id="ip6" class="form-control" placeholder="M.I" >
+                    </div>
+                  </div>
+                <div class="col-md-6 pl-1">
+                  <div>
+                    <label>Patient Name(First)*</label>
+                    <input type="text" value="Jane Marie" id="ip4" class="form-control" placeholder="First Name" >
+                  </div>
+                </div>
+                
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-md-4">
+                    <div >
+                        <label>Patient DOB</label>
+                      <mat-form-field>
+                        <input matInput [(ngModel)]="this.details.dob"  [matDatepicker]="picker"  placeholder="MM/DD/YY">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                      <div >
+                          
+                          <label >Sex</label>
+     
+                            
+                      </div>
+                      <div class="chk">
+                      <input type="checkbox">M
+                              <span class="checkmark"></span> &nbsp;
+                      <input type="checkbox" >F
+                              <span class="checkmark"></span>
+                    </div>
+                  </div>
+                    <div class="col-md-5">
+                        <div >
+                            <label>Patient Relationsship to Insured</label>
+                        </div>
+                        <div class="chk">
+                        <input type="checkbox" >Self
+                              <span class="checkmark"></span> &nbsp;
+                      <input type="checkbox" >Spouse
+                              <span class="checkmark"></span>
+                              <input type="checkbox">Child
+                              <span class="checkmark"></span> &nbsp;
+                      <input type="checkbox">Other
+                              <span class="checkmark"></span>
+                      </div>
+                    </div>
+                </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Patient's Address Line 1:</label>
+                    <input type="text"[(ngModel)]="this.details.address" id="ip2"  class="form-control" placeholder="Street and number " >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Patient's Address Line 2:</label>
+                      <input type="text" id="ip2"  class="form-control" placeholder="Apartment, Suite, unit, building, floor, etc">
+                    </div>
+                  </div>
+                </div>
+              <div class="row">
+                <div class="col-md-4 pr-1">
+                  <div class="form-group">
+                    <label>City</label>
+                    <input type="text" id="ip2" class="form-control" placeholder="City" value="">
+                  </div>
+                </div>
+                <div class="col-md-4 px-1">
+                  <div class="form-group">
+                    <label>State</label>
+                    <input type="text" id="ip2" class="form-control" placeholder="State" value="">
+                  </div>
+                </div>
+                <div class="col-md-4 pl-1">
+                  <div class="form-group">
+                    <label>ZIP Code</label>
+                    <input type="number"  id="ip2" class="form-control" placeholder="ZIP Code">
+                  </div>
+                </div>
+              </div> 
+            <div  class="row" >
+                <div  class="col-sm-4" ></div>
+           <div  class="col-sm-6" >
+              <button mat-raised-button [routerLink]="['/activity/provider']"><i>Back</i></button> &nbsp;
+            <button mat-raised-button (click)="open('focusFirst')"><i>Clear</i></button> &nbsp;
+            <button mat-raised-button (click)="verify()"><i>Verify</i></button>  &nbsp;
+            <button mat-raised-button (click)="next()" [routerLink]="['/claimsubmission']" ><i>Next</i></button>
+           </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<ng4-loading-spinner [timeout]="20000" [loadingText]="'Please wait...'"> </ng4-loading-spinner>

@@ -1,0 +1,9 @@
+<div mat-dialog-content>
+    <p *ngIf="!flag">You are about to {{status}} {{message}} effective from today.</p>
+  <p *ngIf="flag">You are about to {{status}} {{message}} effective from 01/01/2020  to 12/31/2020.</p>
+ <p *ngIf="flag"> Your Biweekly cost for the selected plan would be {{this.data.plan.dollar}} and the Annual cost is {{this.data.plan.dollar2}}</p>
+</div>
+<div mat-dialog-actions>
+  <button  mat-raised-button (click)="back()">Back</button>
+  <button  mat-raised-button  (click)="onNoClick()">Confirm</button>
+</div>

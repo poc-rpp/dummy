@@ -1,0 +1,202 @@
+<div #scrollBottom class="container-fluid ">
+  <div  *ngIf="condition" style="padding-left:20px; background-color:white;
+
+/* Full height */
+height: 100%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;" class="main-content">
+    <br>
+    <div class="row ">
+      <div class="col-sm-6">
+        <h6 style="color:rgb(0, 102, 178)!important">Patient's Information</h6>
+        <hr style=" border-top: 1px solid rgb(0, 102, 178); ">
+        <div class="row">
+          <div class="col-sm-6">
+            <label style="font-size:.9rem">Patient's Last Name</label>
+            <!-- <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc."> -->
+            <input type="text" [(ngModel)]="this._APIService.patientlastname" id="ip2" class="form-control"
+              placeholder="First Name">
+          </div>
+          <div class="col-sm-6">
+            <label style="font-size:.9rem">Patient's First Name</label>
+            <!-- <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc."> -->
+            <input type="text" [(ngModel)]="this._APIService.patientfirstname" id="ip2" class="form-control"
+              placeholder="First Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h6 style="color:rgb(0, 102, 178)!important">Physician's Information
+        </h6>
+        <hr style=" border-top: 1px solid rgb(0, 102, 178);">
+        <div class="row">
+          <div class="col-sm-6">
+            <label>Rendering Provider ID*</label>
+            <!-- <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc."> -->
+            <input type="text" id="ip2" class="form-control" placeholder="Rendering Provider ID" list="staticUserIds"
+              value="2382348711">
+            <datalist id="staticUserIds">
+              <option>2382348711</option>
+              <option>2382348712</option>
+            </datalist>
+          </div>
+          <div class="col-sm-6">
+            <label>Federal Tax ID Number</label>
+            <!-- <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc."> -->
+            <input type="text" [(ngModel)]="details.tax_id_num" id="ip2" class="form-control"
+              placeholder="Federal Tax ID Number" list="staticUserIds1" value="XY1823828378">
+            <datalist id="staticUserIds1">
+              <option>XY1823828378</option>
+              <option>XY1823828376</option>
+            </datalist>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <label>Billing Provider ID</label>
+            <!-- <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc."> -->
+            <input type="text" [(ngModel)]="value" id="ip2" class="form-control" placeholder="Billing Provider ID"
+              list="staticUserIds2" value="">
+            <datalist id="staticUserIds2">
+              <option>112233448</option>
+              <option>112233449</option>
+            </datalist>
+          </div>
+          <div class="col-sm-6">
+            <label>Service Area ZIP Code*</label>
+            <!-- <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc."> -->
+            <input type="text" [(ngModel)]="details.service_area_zip" id="ip2" class="form-control" enabled
+              placeholder="ZIP Code" value="">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        <h6 style="color:rgb(0, 102, 178)!important">Service Information</h6>
+        <hr style=" border-top: 1px solid rgb(0, 102, 178); ">
+      </div>
+    </div>
+    <div *ngFor="let block of services;index as i">
+      <h6>Service {{i+1}}</h6>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-6">
+              <label>Date(s) Of Service</label>
+              <mat-form-field>
+                <input [(ngModel)]="block.service_from_date" matInput [matDatepicker]="picker" placeholder="From">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+            </div>
+
+            <div class="col-sm-6">
+              <label>Date(s) Of Service</label>
+              <mat-form-field>
+                <input [(ngModel)]="block.service_through_date" matInput [matDatepicker]="picker1" placeholder="To">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-6">
+              <label>Place Of Service</label>
+              <input type="text" [(ngModel)]="block.place_of_service" id="ip2" class="form-control" placeholder="POS" list="staticUserIds6">
+              <datalist id="staticUserIds6">
+                  <option> Office </option>
+                </datalist>
+            </div>
+            <div class="col-sm-6">
+              <label>CPT/HCPCS</label>
+              <!-- <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc."> -->
+              <input type="text" [(ngModel)]="block.procedure_code" id="ip2" class="form-control"
+                placeholder="Procedure,Services or supplies" list="staticUserIds4">
+              <datalist id="staticUserIds4">
+                <option> 86481-TUBERCULOSIS TEST, CELL MEDIATED IMMUNITY ANTIGEN RESPONSE MEASUREMENT,ENUMERATION OF GAMMA INTERFERON-PRODUCING T-CELL </option>
+                <option> 90633-HEPATITIS A VACCINE (HEPA), PEDIATRIC/ADOLESCENT DOSAGE-2 DOSE SCHEDULE, FOR INTRAMUSCULAR USE </option>
+                <option> 90710-IMMUNIZATION, ACTIVE; MEASLES, MUMPS, RUBELLA, AND VARICELLA VACCINE</option>
+                <option> 92586-AUDITORY EVOKED POTENTIALS FOR EVOKED RESPONSE AUDIOMETRY AND/OR TESTING OF THE CENTRAL NERVOUS SYSTEM; LIMITED </option>
+                <option> 99395-PREVENTIVE MED SERVICES; REEVALUATIONL ESTABLISHED PATIENT 18 - 39 YEARS</option>
+                <option> 99391-PREVENTIVE MED SERVICES; REEVALUATIONL ESTABLISHED PATIENT; INFANT (AGE UNDER 1 YEAR) </option>
+              </datalist>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ehgoihweroighweoi -->
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-6">
+              <label>Diagnosis Code</label>
+              <input [(ngModel)]="block.diagnosis_code_line" type="text" id="ip2" class="form-control"
+                placeholder="Diagnosis Code" list="staticUserIds3" value="">
+              <datalist id="staticUserIds3">
+                <option> Z3480-Encounter for supervision of other normal pregnancy, unspecified trimester</option>
+                <option> Z00129-Encounter for routine child health examination without abnormal findings </option>
+                <option> Z23-Encounter for immunization </option>
+                <option> Z00110-Health examination for newborn under 8 days old </option>
+                <option> Z0000-Encounter for general adult medical examination without abnormal findings </option>
+                <option> Z00129-Encounter for routine child health examination without abnormal findings </option>
+              </datalist>
+            </div>
+            <div class="col-sm-6">
+              <label>Days or Units</label>
+              <input [(ngModel)]="block.number_of_units" type="text" id="ip2" class="form-control"
+                placeholder="Days or Unit" value="">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-6">
+              <label>Billed Amount</label>
+              <input type="text" [(ngModel)]="block.billed_amount" id="ip2" class="form-control"
+                placeholder="billed amount" value="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+
+    <div *ngIf="!serviceSummary" class="row">
+      <div class="col-sm-6">
+
+        <div class="valign-center" (click)="addService()">
+
+          <i class="material-icons">
+            add_circle_outline
+          </i>
+          <span><b>Add Services for Payment</b> </span>
+        </div>
+        <!-- <p style="color:rgb(0, 102, 178); "> <i class="material-icons">
+            add_circle_outline
+            </i>Add Services for Payment </p> -->
+      </div>
+      <br>
+    </div>
+
+    <div *ngIf="!serviceSummary" valign="bottom" class="row">
+      <br>
+      <div class="col-sm-5"></div>
+      <div class="col-sm-6">
+        <button class="button button4">Cancel</button>&nbsp;&nbsp;
+        <button (click)="getProviderDetails()" class="button button4">Submit</button>&nbsp;&nbsp;
+      </div>
+    </div>
+    <br>
+    <app-getpaid *ngIf="serviceSummary"></app-getpaid>
+  </div>
+  <ng4-loading-spinner [timeout]="20000" [loadingText]="'Please wait...'"> </ng4-loading-spinner>

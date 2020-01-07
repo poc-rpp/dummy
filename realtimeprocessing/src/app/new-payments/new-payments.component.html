@@ -1,0 +1,162 @@
+<div class="container-fluid ">
+  <div style="padding-left:20px; background-color:white;
+
+/* Full height */
+height: 100%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;" class="main-content">
+    <br>
+    <h6>Payment History</h6>
+    <div class="row ">
+      &nbsp;&nbsp;&nbsp;
+      <img style="width:2%;height: 12%;color:rgb(12, 109, 182);" src="./assets/filter.png" />
+      <div class="col-sm-1" style="padding-left: 5px;">
+        <label>Filter</label>
+      </div>
+      <div class="col-sm-3" style="color: rgb(123, 123, 125);padding-left: 0px;">
+        <label>Member ID</label> &nbsp;
+        <input type="text" name="search" [(ngModel)]="memberId" autocomplete="off" id="ip2" placeholder=" member id">
+      </div>
+      <div class="col-sm-3" style="color: rgb(123, 123, 125);padding-left: 0px;">
+          <label>Payment Date</label> &nbsp;
+          <input type="text"  [(ngModel)]="memberId" autocomplete="off" id="ip2" placeholder=" payment date">
+        </div>
+      <!-- <div class="col-sm-7" style="color: rgb(123, 123, 125)">
+        <div class="row ">
+          <div class="col-sm-8">
+            <label>Payment Date</label>
+            <mat-form-field>
+
+              <input matInput [matDatepicker]="picker1" placeholder="">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div style="padding-top: 50px;">
+          <mat-list>
+            <mat-list-item>
+              <div class="row table-header">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="col-sm-1" style="font-size:13px" style="bottom: 0;">
+                  Member ID
+                </div>
+                <div class="col-sm-2" style="font-size:13px" style="bottom: 0">
+                  Name
+                </div>
+                <div class="col-sm-6" style="font-size:13px" style="bottom: 0">
+                  Payment Date
+                </div>
+
+                <div class="col-sm-1" style="font-size:13px" style="bottom: 0">
+                  Payment
+                </div>
+                <div class="col-sm-1" style="font-size:13px" style="bottom: 0">
+                  Amount
+                </div>
+              </div>
+            </mat-list-item>
+            <div *ngFor="let patient of JSON | filter:memberId;">
+              <mat-list-item class="list">
+                <div class="patient-list row">
+                  <mat-icon *ngIf="patient.status=='active'" (click)="expansion(patient)" style="padding: 7px;">
+                    keyboard_arrow_right</mat-icon>
+                  <mat-icon *ngIf="patient.status!='active'" (click)="expansion(patient)" style="padding: 7px;">
+                    keyboard_arrow_down</mat-icon>
+                  <!-- <mat-icon >keyboard_arrow_down</mat-icon> -->
+                  <div class="col-sm-1" style="font-size:13px;padding: 10px;
+                 ">
+                    {{patient.subscriber_id}}
+                  </div>
+                  <div class="col-sm-2" style="font-size:13px;padding: 10px;">
+                    {{patient.first}} {{patient.last}}
+                  </div>
+                  <div class="col-sm-6" style="font-size:13px;padding: 10px;">
+                    {{patient.timestamp |  date: 'MM/dd/yyyy'}}
+                  </div>
+                  <div class="col-sm-1" style="font-size:13px;padding: 10px;">
+                    {{patient.total_provider_pay_amt}}
+                  </div>
+                  <div class="col-sm-1" style="font-size:13px;padding: 10px;">
+                    {{patient.total_allowed_amt}}
+                  </div>
+
+                </div>
+              </mat-list-item>
+              <div *ngIf="patient.status!='active'" style=" border-left: 1px solid #dbdbdb;
+              border-right: 1px solid #dbdbdb;
+              border-bottom: 1px solid #dbdbdb;transition: .3s;">
+                <h6 style="font-size:14px;padding:10px">Payment Details:</h6>
+                <div style="font-size:13px;" class="container-fluid">
+
+                  <div style="color: rgb(123, 123, 125);" class="row">
+                    <div style="padding-left: 35px;" class="col-sm-3">Transaction ID: <span
+                        style="color: black">{{patient.TransactionID}}</span></div>
+                    <div class="col-sm-3">Total Billed:<span style="color: black">${{patient.total_billed_amt}}</span>
+                    </div>
+                    <div class="col-sm-3">Total Allowed: <span
+                        style="color: black">${{patient.total_allowed_amt}}</span></div>
+
+
+                  </div>
+                  <br>
+                  <div style="color: rgb(123, 123, 125);" class="row">
+                    <div style="padding-left: 35px;" class="col-sm-3">Total Discount: <span
+                        style="color: black">${{patient.discount_percentage}}</span></div>
+                    <div class="col-sm-3">Total Paid to Provider: <span
+                        style="color: black">${{patient.total_provider_pay_amt}}</span></div>
+                    <div class="col-sm-3">Member Responsiblity: <span
+                        style="color: black">${{patient.total_member_responsibility}}</span></div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div style="padding-left: 35px;font-size:11px;" class="col-sm-3"><b>Itemized Service Payment</b>
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div style="padding-left: 35px;font-size:11px;" class="col-sm-12">
+                      <table>
+
+                        <tr style=" background: rgb(230, 239, 246);">
+                          <th>Service</th>
+                          <th>CPT/HCPCS</th>
+                          <th>Diagonsis Code </th>
+                          <th>Charge</th>
+                          <th>Allowed</th>
+                          <th>Discount</th>
+                          <th>Pay to Provider</th>
+                          <th>Member responsiblity</th>
+                        </tr>
+                        <tr style=" background: white;" *ngFor="let item of patient.services;index as i">
+                          <td>Service {{i+1}}</td>
+                          <td>{{item.procedure_code}}</td>
+                          <td>{{item.diagnosis_code_line}}</td>
+                          <td>${{item.billed_amount}}</td>
+                          <td>${{item.allowed_amt}}</td>
+                          <td>${{item.discount_amt}}</td>
+                          <td>${{item.provider_pay_amt}}</td>
+                          <td>${{item.member_responsibility}}</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng4-loading-spinner [timeout]="20000" [loadingText]="'Please wait...'"> </ng4-loading-spinner>

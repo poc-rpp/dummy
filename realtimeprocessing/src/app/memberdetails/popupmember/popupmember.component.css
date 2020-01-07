@@ -1,0 +1,51 @@
+.mat-raised-button:focus {
+    outline:0;
+
+}
+.mat-raised-button:hover{
+   
+    background-color: rgb(98, 176, 207) 
+}
+#ip3{
+    border: #ffffff;
+    border: 5px  solid #ffffff;
+    color:rgb(2, 1, 1);
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgb(212,212,212,16%);
+  }
+
+  #ip2{
+      color: black;
+  }
+
+h5 {
+  border-bottom: 2px solid rgba(0, 102, 178, 1);
+  color: rgba(0, 102, 178, 1)
+}
+span {
+  color: rgb(106, 108, 110, 50)
+}
+.mat-dialog-content {
+  max-height: 90vh;
+}
+
+.TFtableCol tr td:nth-child(odd){ 
+  background: #ffffff;
+}
+
+.TFtableCol tr td:nth-child(even){
+  background: rgb(248, 248, 248);
+}

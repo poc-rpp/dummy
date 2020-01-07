@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="main-content">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="card col-sm-4">
+        <div>
+          <h5 class="title text-center"><i>{{selectedId | titlecase}} Log In</i></h5>
+          <div class="card-body">
+            <div *ngIf="this.error==true">
+              <h5 class="title text-center" style="color:red"><i>Username or Password is incorrect</i></h5>
+              </div>
+            <form [formGroup]="loginForm">
+              <div class="example-container">
+                <mat-form-field [color]="primary" >
+                    <mat-label>USERNAME</mat-label>
+                  <input matInput formControlName="user">
+                </mat-form-field>
+              
+                <mat-form-field>
+                    <mat-label>PASSWORD</mat-label>
+                    <input matInput type="password" formControlName="password">
+                  </mat-form-field>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-sm-7">
+                <button mat-raised-button (click)="login()"><i>Login</i></button>&nbsp;&nbsp;
+                <button mat-raised-button [routerLink]="['/']"><i>Cancel</i></button>&nbsp;&nbsp;
+              </div>
+              
+            </div>
+            <br>
+            <div class="row" style="text-align: center;">
+                &nbsp;&nbsp;<a [routerLink]="['/forgot','forgot']" >Forgot Password?</a><br>
+              </div>
+            <div class="row" style="text-align: center;">
+                <p style="width: 100%;">Don't have an account? <br><a [routerLink]="['/signup',this.selectedId]">Sign-up</a></p><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

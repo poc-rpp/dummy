@@ -1,0 +1,61 @@
+<div  class="container-fluid">
+        <div class="main-content">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="card col-sm-8">
+                             <div *ngIf="this.selectedId=='reset'">
+                                    <h5 class="text-center"><i>Reset Your Password</i></h5>
+                                   <div class="card selector">
+                                        <div class="card-body">
+                                                <mat-form-field [color]="primary" >
+                                                    <mat-label>USERNAME</mat-label>
+                                                    <input matInput [(ngModel)]="resetdetails.username" >
+                                                </mat-form-field>&nbsp;&nbsp;
+                                                <mat-form-field [color]="primary" >
+                                                    <mat-label>OLD PASSWORD</mat-label>
+                                                      <input matInput [(ngModel)]="resetdetails.old_password" >
+                                                </mat-form-field>&nbsp;&nbsp;
+                                                 <mat-form-field [color]="primary" >
+                                                      <mat-label>NEW PASSWORD</mat-label>
+                                                        <input matInput [(ngModel)]="resetdetails.password" >
+                                                </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <button mat-raised-button (click)="reset()"><i>Reset</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="(this.selectedId=='reset') && done==true">
+                                    <p>Your password is updated successfully</p>
+                                </div>
+                                <div *ngIf="done==false">
+                                        <h5 class="text-center"><i>Retrieve your Password</i></h5>
+                                       <div class="card selector">
+                                            <div class="card-body">
+                                                    <mat-form-field [color]="primary" >
+                                                        <mat-label>USERNAME</mat-label>
+                                                        <input matInput [(ngModel)]="forgotdetails.username" >
+                                                    </mat-form-field>&nbsp;&nbsp;
+                                                    <mat-form-field [color]="primary" >
+                                                        <mat-label>EMAIL</mat-label>
+                                                          <input matInput [(ngModel)]="forgotdetails.email">
+                                                    </mat-form-field>&nbsp;&nbsp;
+                                                     <mat-form-field [color]="primary" >
+                                                          <mat-label>QUESTION</mat-label>
+                                                            <input matInput [(ngModel)]="forgotdetails.question">
+                                                    </mat-form-field>&nbsp;&nbsp;
+                                                    <mat-form-field [color]="primary" >
+                                                            <mat-label>ANSWER</mat-label>
+                                                              <input matInput [(ngModel)]="forgotdetails.answer" >
+                                                      </mat-form-field>
+                                                    <button mat-raised-button (click)="verify()"><i>VERIFY</i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="done==true">
+                                        <p>A Mail was send to your registered Email Id</p>
+                                        <a [routerLink]="['/']">Home</a>
+                                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng4-loading-spinner [timeout]="99000" [loadingText]="'Please wait...'"> </ng4-loading-spinner>

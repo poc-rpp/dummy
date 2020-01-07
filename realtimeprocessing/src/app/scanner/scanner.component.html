@@ -1,0 +1,50 @@
+<div style="background-color:white;
+
+/* Full height */
+height: 100%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;" class="scanner-shell" [hidden]="!hasDevices">
+  <br>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <header>
+          <mat-form-field appearance="fill">
+            <select matNativeControl matInput (change)="onDeviceSelectChange($event.target.value)">
+              <option value="" [selected]="!currentDevice">No Device Selected</option>
+              <option *ngFor="let device of availableDevices" [value]="device.deviceId"
+                [selected]="currentDevice && device.deviceId === currentDevice.deviceId">{{device.label}}</option>
+            </select>
+          </mat-form-field>
+        </header>
+      </div>
+      <div style="background-color:rgb(243, 244, 248);">
+        <br>
+        <p class="text-center">Please use the QR reader to scan your code.</p>
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            <zxing-scanner *ngIf="flag" [torch]="torchEnabled" [(device)]="currentDevice"
+              (scanSuccess)="onCodeResult($event)" [formats]="formatsEnabled" [tryHarder]="tryHarder"
+              (permissionResponse)="onHasPermission($event)" (camerasFound)="onCamerasFound($event)"
+              (torchCompatible)="onTorchCompatible($event)"></zxing-scanner>
+            <section class="results" *ngIf="qrResultString">
+              <div *ngIf="!flag" class="col-sm-8">
+                <strong>{{ qrResultString }}</strong>
+              </div>
+              <button mat-icon-button (click)="clearResult()">&times;</button>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
